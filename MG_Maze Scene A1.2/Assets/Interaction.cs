@@ -1,19 +1,17 @@
 ﻿using System.Collections;
+using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Interaction : MonoBehaviour {
 
 	public int Collection = 0;
-	public GameObject Sphere;
+	public GameObject Cube;
 
 	// Update is called once per frame
 	void Update () 
 	{
-		if (Collection == 4) 
-		{
-			Sphere.SetActive (false);
-		}
+		
 	}
 
 	void OnCollisionEnter(Collision col)
@@ -40,6 +38,17 @@ public class Interaction : MonoBehaviour {
 		{
 			Destroy (col.gameObject);
 			++Collection;
+		}
+	}
+
+	void OnTriggerEnter(Collider Col)
+	{
+		if (Collection == 4) 
+		{
+			if (Col.gameObject.name == "Cube") 
+			{
+				SceneManager.LoadScene("differentScene");
+			}
 		}
 	}
 }

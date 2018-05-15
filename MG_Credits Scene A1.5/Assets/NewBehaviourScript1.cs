@@ -8,6 +8,7 @@ public class NewBehaviourScript1 : MonoBehaviour {
 	public bool ShowCursor;
 	public float SensitivityXaxis;
 	public float SensitivityYaxis;
+	public float MovementSpeed;
 	// Update is called once per frame
 	void Start()
 	{
@@ -26,8 +27,8 @@ public class NewBehaviourScript1 : MonoBehaviour {
 
 		gameObject.transform.localEulerAngles = new Vector3(newRotationX, newRotationY, 0);
 
-		var x = Input.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
-		var z = Input.GetAxis ("Vertical") * Time.deltaTime * 9.0f;
+		var x = Input.GetAxis("Horizontal") * Time.deltaTime * 150.0f * MovementSpeed;
+		var z = Input.GetAxis ("Vertical") * Time.deltaTime * 9.0f * MovementSpeed;
 
 		transform.Rotate (0, x, 0);
 		transform.Translate (0, 0, z);

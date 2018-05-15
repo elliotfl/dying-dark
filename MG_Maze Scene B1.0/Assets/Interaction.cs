@@ -6,7 +6,7 @@ using UnityEngine;
 public class Interaction : MonoBehaviour {
 
 	public int Collection = 0;
-	public GameObject Cube;
+	public GameObject Gate;
 
 	// Update is called once per frame
 	void Update () 
@@ -57,9 +57,9 @@ public class Interaction : MonoBehaviour {
 
 	void OnTriggerEnter(Collider Col)
 	{
-		if (Collection == 6) 
+		if (Collection == 1) 
 		{
-			if (Col.gameObject.name == "Cube") 
+			if (Col.gameObject.name == "Gate") 
 			{
 				SceneManager.LoadScene("Credits");
 			}

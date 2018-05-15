@@ -16,38 +16,52 @@ public class Interaction : MonoBehaviour {
 
 	void OnCollisionEnter(Collision col)
 	{
-		if (col.gameObject.name == "Wall_1")
+		if (col.gameObject.name == "gemstone.green")
 		{
 			Destroy (col.gameObject);
 			++Collection;
 		}
 
-		if (col.gameObject.name == "Wall_2")
+		if (col.gameObject.name == "gemstone.red")
 		{
 			Destroy (col.gameObject);
 			++Collection;
 		}
 
-		if (col.gameObject.name == "Wall_3")
+		if (col.gameObject.name == "gemstone.hotpink")
 		{
 			Destroy (col.gameObject);
 			++Collection;
 		}
 
-		if (col.gameObject.name == "Wall_4")
+		if (col.gameObject.name == "gemstone.silver")
 		{
 			Destroy (col.gameObject);
 			++Collection;
 		}
+
+		if (col.gameObject.name == "gemstone.yellow")
+		{
+			Destroy (col.gameObject);
+			++Collection;
+		}
+
+		if (col.gameObject.name == "gemstone.blue")
+		{
+			Destroy (col.gameObject);
+			++Collection;
+		}
+
+
 	}
 
 	void OnTriggerEnter(Collider Col)
 	{
-		if (Collection == 4) 
+		if (Collection == 6) 
 		{
 			if (Col.gameObject.name == "Cube") 
 			{
-				SceneManager.LoadScene("differentScene");
+				SceneManager.LoadScene("Credits");
 			}
 		}
 	}
